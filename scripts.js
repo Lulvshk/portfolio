@@ -5,21 +5,20 @@ const themeIcon = document.getElementById('theme-icon');
 themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('light-mode');
     document.body.classList.toggle('dark-mode');
-    themeIcon.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
 });
 
 // Language select functionality
 const languageSelect = document.getElementById('language-select');
 const projectDescriptions = {
-    es: ["Proyecto 1 - Descripción en español", "Proyecto 2 - Descripción en español"],
-    en: ["Project 1 - English description", "Project 2 - English description"]
+    es: ["Omnilu - Bot mutltifuncional de Discord.js", "Portfolio - "],
+    en: ["Omnilu - Multifunctional Discord.js Bot", "Portfolio - "]
 };
 const buttonsText = {
     es: { projects: "Proyectos", contact: "Contacto" },
     en: { projects: "Projects", contact: "Contact" }
 };
 
-let currentLanguage = 'es';
+let currentLanguage = 'en';
 languageSelect.addEventListener('change', (event) => {
     currentLanguage = event.target.value;
     updateProjectDescription();
