@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas José Agüero Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-mode">
+    <div class="controls">
+        <button id="theme-toggle" class="icon-button"><span id="theme-icon">🌙</span></button>
+        <select id="language-select">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+    
+    <main id="main-content">
+        <h1 class="typing"><span id="typed-text"></span><span class="cursor">|</span></h1>
+        <div class="links">
+            <a href="https://github.com/Lulvshk" target="_blank" class="icon-button">
+                <img src="./assets/github-logo.png" alt="GitHub" class="github-logo">
+            </a>
+            <button id="projects-button" class="btn" onclick="showProjects()">Proyectos</button>
+            <button id="contact-button" class="btn" onclick="showContact()">Contacto</button>
+        </div>
+    </main>
+
+    <button id="back-button" class="hidden" onclick="showMain()">⬅ Inicio</button>
+
+    <section id="projects" class="hidden">
+        <div class="project-slider">
+            <button class="arrow" onclick="prevProject()">⬅</button>
+            <div class="project" id="project-description"></div>
+            <button class="arrow" onclick="nextProject()">➡</button>
+        </div>
+    </section>
+    
+    <section id="contact" class="hidden">
+        <p>Contacto: aguerolucasjose@gmail.com</p>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
