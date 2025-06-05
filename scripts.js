@@ -1,37 +1,27 @@
 // Toggle dark/light mode
-const themeToggle = document.getElementById('theme-toggle');
-const themeIcon = document.getElementById('theme-icon');
+const theme = document.getElementById('theme');
+const buttonsLanguage = {es: {projects: "Proyectos", contact: "Contacto"}, en: {projects: "Projects", contact: "Contact"}};
 
-themeToggle.addEventListener('click', () => {
+theme.addEventListener("click", () => {
     document.body.classList.toggle('light-mode');
     document.body.classList.toggle('dark-mode');
+    document.getElementById("back-button").classList.toggle('light-mode');
 });
 
-// Language select functionality
-const languageSelect = document.getElementById('language-select');
-const projectDescriptions = {
-    es: ["Omnilu - Bot mutltifuncional de Discord.js", "Portfolio - "],
-    en: ["Omnilu - Multifunctional Discord.js Bot", "Portfolio - "]
-};
-const buttonsText = {
-    es: { projects: "Proyectos", contact: "Contacto" },
-    en: { projects: "Projects", contact: "Contact" }
-};
 
+
+const languageSelect = document.getElementById('language-select');
 let currentLanguage = 'en';
 languageSelect.addEventListener('change', (event) => {
     currentLanguage = event.target.value;
-    updateProjectDescription();
-    updateButtonText();
+    updateLanguage();
 });
 
-// Update buttons text based on selected language
-function updateButtonText() {
-    document.getElementById("projects-button").textContent = buttonsText[currentLanguage].projects;
-    document.getElementById("contact-button").textContent = buttonsText[currentLanguage].contact;
+function updateLanguage() {
+    document.querySelector("a[href='#projects']").textContent = buttonsLanguage[currentLanguage].projects;
+    document.querySelector("a[href='#contact']").textContent = buttonsLanguage[currentLanguage].contact;
 }
 
-// Typing animation for portfolio title
 const typedText = document.getElementById("typed-text");
 const cursor = document.querySelector(".cursor");
 const title = "Lucas José Agüero Portfolio";
@@ -50,51 +40,3 @@ function typeTitle() {
 document.addEventListener("DOMContentLoaded", () => {
     setTimeout(typeTitle, 500);
 });
-
-// Project slider functionality
-let currentProjectIndex = 0;
-const projectDescription = document.getElementById('project-description');
-
-function updateProjectDescription() {
-    projectDescription.textContent = projectDescriptions[currentLanguage][currentProjectIndex];
-}
-
-function nextProject() {
-    currentProjectIndex = (currentProjectIndex + 1) % projectDescriptions[currentLanguage].length;
-    updateProjectDescription();
-}
-
-function prevProject() {
-    currentProjectIndex = (currentProjectIndex - 1 + projectDescriptions[currentLanguage].length) % projectDescriptions[currentLanguage].length;
-    updateProjectDescription();
-}
-
-// Show/hide projects and contact sections with transition
-const mainContent = document.getElementById('main-content');
-const projectsSection = document.getElementById('projects');
-const contactSection = document.getElementById('contact');
-const backButton = document.getElementById('back-button');
-
-function showProjects() {
-    mainContent.classList.add('hidden');
-    contactSection.classList.add('hidden');
-    projectsSection.classList.remove('hidden');
-    backButton.classList.remove('hidden');
-    projectsSection.classList.add('fadeIn');
-    updateProjectDescription();
-}
-
-function showContact() {
-    mainContent.classList.add('hidden');
-    projectsSection.classList.add('hidden');
-    contactSection.classList.remove('hidden');
-    backButton.classList.remove('hidden');
-    contactSection.classList.add('fadeIn');
-}
-
-function showMain() {
-    projectsSection.classList.add('hidden');
-    contactSection.classList.add('hidden');
-    backButton.classList.add('hidden');
-    mainContent.classList.remove('hidden');
-}
