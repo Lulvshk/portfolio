@@ -1,0 +1,20 @@
+{
+    "es": [
+        {
+            "title": "OmniLu",
+            "description": "Un bot multifuncional de Discord.js.",
+            "link": "https://github.com/Lulvshk/OmniLu",
+            "finished": true,
+            "languages": ["javascript", "node.js"]
+        }
+    ],
+    "en": [
+        {
+            "title": "OmniLu",
+            "description": "A multifunctional Discord.js bot.",
+            "link": "https://github.com/Lulvshk/OmniLu",
+            "finished": true,
+            "languages": ["javascript", "node.js"]
+        }
+    ]
+}

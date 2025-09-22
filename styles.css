@@ -11,6 +11,14 @@ body, html {
     margin: inherit;
 }
 
+:root {
+  --text-color: white; /* default */
+}
+
+.hidden {
+  display: none;
+}
+
 .section {
   height: 100%;
   width: 100%;
@@ -30,14 +38,11 @@ body, html {
 }
 
 .typing {
-    font-size: 2em;
-    overflow: hidden;
-    white-space: nowrap;
-    width: fit-content;
-    margin: 0 auto;
+    display: inline-flex;
+    align-items: baseline;
 }
 .cursor {
-    display: inline-block;
+    margin-left: 2px;
     animation: blink-caret 0.75s step-end infinite;
 }
 @keyframes blink-caret {
@@ -47,11 +52,12 @@ body, html {
 body.dark-mode {
     background-color: #121212;
     color: #ffffff;
+    --text-color: white;
 }
 body.light-mode  {
     background-color: #ffffff;
     color: #000000;
-    
+    --text-color: black;
 }
 
 .controls {
@@ -96,29 +102,103 @@ a.button:hover {
     text-decoration: none;
 }
 
-a#home {
-    position: relative;
-    top: -340px;
-    left: -640px;
-    font-size: 20px;
+.home-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 20px;
+  text-decoration: none;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
 }
-section#contact > a#home {
-    position: relative;
-    top: -220px;
-    left: -640px;
-    font-size: 20px;
-}
+
 #home:target ~ .sections {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 #projects:target ~ .sections {
-  -webkit-transform: translate3d(0, -140%, 0);
-  transform: translate3d(0, -140%, 0);
+  -webkit-transform: translate3d(0, -148%, 0);
+  transform: translate3d(0, -148%, 0);
 }
 #contact:target ~ .sections {
-  -webkit-transform: translate3d(0, -100%, 0);
-  transform: translate3d(0, -290%, 0);
+  -webkit-transform: translate3d(0, -120%, 0);
+  transform: translate3d(0, -285%, 0);
+}
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+}
+
+.project-display {
+  width: 80%;
+}
+
+.project-card {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.proj-nav-btn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.project-status {
+  display: inline-block;
+  background-color: #ffcc00;
+  color: #333;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  font-weight: bold;
+  padding: 2px 3px;
+}
+
+.project-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-langs img {
+  height: 24px;
+}
+
+.project-github-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #333;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.project-github-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: #f2f2f2;
+}
+
+.project-github-btn:hover {
+  background-color: #f2f2f2;
+}
+
+.project-github-btn:hover svg {
+  fill: #333;
 }
 
 .social-buttons {

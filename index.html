@@ -26,6 +26,7 @@
             <option value="en" selected>English</option>
         </select>
     </div>
+    <a href="#home" id="home-btn" class="home-btn hidden">🏠︎</a>
     <main class="sections">
         <section class="section" id="home">
             <h1 class="typing"><span id="typed-text"></span><span class="cursor">|</span></h1>
@@ -35,11 +36,14 @@
             </div>
         </section>
         <section class="section" id="projects">
-            <h1>Placeholder</h1>
-            <a href="#home" class="button" id="home">🏠︎</a>
+            <div class="projects-container">
+                <button id="prev-project-btn" class="proj-nav-btn">‹</button>
+                <div class="project-display">
+                </div>
+                <button id="next-project-btn" class="proj-nav-btn">›</button>
+            </div>
         </section>
         <section class="section" id="contact">
-        <a href="#home" class="button" id="home">🏠︎</a>
         <p>aguerolucasjose@gmail.com</p>
             <div class="social-buttons">
                 <a href="https://github.com/Lulvshk" class="social-button github">
