@@ -20,21 +20,22 @@ body, html {
 }
 
 .section {
-  height: 100%;
+  height: 100vh;
   width: 100%;
-  display: table;
-  z-index: 0;
   -webkit-transition: transform 0.45s cubic-bezier(0, 0, 0.21, 1);
   transition: transform 0.45s cubic-bezier(0, 0, 0.21, 1);
+  flex-direction: column;
+  display: flex;
   text-align: center;
-  margin-top: 270px;
-  
+  justify-content: center;
+  align-items: center;
 }
 .sections {
-    position: center;
+    position: relative;
     width: 100%;
     height: 100vh;
     transition: transform 0.5s ease-in-out;
+    flex-direction: column;
 }
 
 .typing {
@@ -116,16 +117,16 @@ a.button:hover {
 }
 
 #home:target ~ .sections {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translateY(0vh);
+  transform: translateY(0vh);
 }
 #projects:target ~ .sections {
-  -webkit-transform: translate3d(0, -148%, 0);
-  transform: translate3d(0, -148%, 0);
+  -webkit-transform: translateY(-100vh);
+  transform: translateY(-100vh);
 }
 #contact:target ~ .sections {
-  -webkit-transform: translate3d(0, -120%, 0);
-  transform: translate3d(0, -285%, 0);
+  -webkit-transform: translateY(-200vh);
+  transform: translateY(-200vh);
 }
 
 .projects-container {
@@ -134,7 +135,7 @@ a.button:hover {
 }
 
 .project-display {
-  width: 80%;
+  width: 100vh;
 }
 
 .project-card {
