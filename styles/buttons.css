@@ -1,0 +1,37 @@
+a.button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.3s;
+    text-decoration: none;
+}
+a.button:hover {
+    transform: scale(1.1);
+}
+
+#language-select {
+    background: transparent;
+    color: inherit;
+    border: none;
+    padding: 5px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+#language-select option {
+    background: #121212;
+    color: #ffffff;
+}
+
+.home-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    z-index: 1000;
+}
